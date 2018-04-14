@@ -5,13 +5,14 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
-    "test": "jest" 
+    "test": "jest"
   },
   "jest": {
     "testEnvironment": "node"
   },
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "morgan": "^1.9.0"
   },
   "devDependencies": {
     "axios": "^0.18.0",

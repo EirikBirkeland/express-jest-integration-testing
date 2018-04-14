@@ -1,4 +1,7 @@
 const app = require('express')();
+const morgan = require('morgan');
+
+app.use(morgan('tiny'));
 
 app.get('/temperature', (req, res) => {
 	// get temperature here from acpi or whatever
