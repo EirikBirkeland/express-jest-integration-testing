@@ -1,5 +1,4 @@
 # Integration testing an Express server with Jest
 
-* `index.js` exports the server
-* This server is spun up as a side-effect when required in the spec file.
-* Since the server is exported, we can control the server, e.g. run `server.close();` to close the server after we're done testing it.
+* `index.js` spins up the server and exports it.
+* This server is required in the spec file, so we can manipulate it directly by calling commands like `server.close();` to close the server after we're done testing it.
