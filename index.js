@@ -1,4 +1,5 @@
 const app = require('express')();
+const log = require('debug')(__filename);
 const morgan = require('morgan');
 
 app.use(morgan('tiny'));
@@ -9,7 +10,7 @@ app.get('/temperature', (req, res) => {
 
 const PORT = 3333;
 const server = app.listen(PORT, () => {
-	console.log(`Server running on port ${PORT}`);
+	log(`Server running on port ${PORT}`);
 });
 
 module.exports = server;

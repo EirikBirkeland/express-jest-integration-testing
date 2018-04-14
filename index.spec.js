@@ -1,5 +1,5 @@
 const axios = require('axios');
-const log = console.log;
+const log = require('debug')(__filename);
 const server = require('./index');
 
 const client = axios.create({
