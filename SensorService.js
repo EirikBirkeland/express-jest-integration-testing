@@ -6,6 +6,7 @@ class SensorService {
   }
 
   getTemperature () {
+    // TODO: Replace with real sensor call
     return getRandomArbitrary(15, 35);
   }
 }
