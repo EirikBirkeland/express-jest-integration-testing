@@ -5,7 +5,6 @@ app.use(morgan('tiny'));
 
 app.get('/temperature', (req, res) => {
 	// get temperature here from acpi or whatever
-	console.log('Received request');
 	res.status(200).send('Current CPU temperature is 55\'C')
 });
 
