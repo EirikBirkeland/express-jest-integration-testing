@@ -7,7 +7,6 @@ const SensorService = require('./SensorService');
 app.use(morgan('tiny'));
 
 app.get('/temperature', (req, res) => {
-	res.status(200);
 	const { room, unit } = config;
 	const { temperature } = SensorService.getTemperature();
 
