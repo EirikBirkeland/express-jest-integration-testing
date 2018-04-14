@@ -4,13 +4,12 @@ const morgan = require('morgan');
 app.use(morgan('tiny'));
 
 app.get('/temperature', (req, res) => {
-	// get temperature here from acpi or whatever
-	res.status(200).send('Current CPU temperature is 55\'C')
+	res.status(200).send(`Current room temperature is 25.5'C`);
 });
 
 const PORT = 3333;
 const server = app.listen(PORT, () => {
-	console.log("Server running on port " + PORT);
+	console.log(`Server running on port ${PORT}`);
 });
 
 module.exports = server;

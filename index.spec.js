@@ -10,8 +10,8 @@ const client = axios.create({
 test('Query server for temperature', done => {
 	client.get('/temperature')
 		.then(res => {
-			log("Retrieved data: " + res.data);
-			expect(res.data).toMatch('CPU temperature');
+			log(`Retrieved data: ${res.data}`);
+			expect(res.data).toMatch('room temperature');
 			done();
 			server.close();
 		})
