@@ -1,4 +1,4 @@
 module.exports = {
   room: "kitchen",
-  unit: "celsius",
+  unit: "C",
 }

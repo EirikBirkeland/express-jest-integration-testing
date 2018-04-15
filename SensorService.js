@@ -1,13 +1,18 @@
 // regularly polled temperature data exported as a live-updating singleton
+const childProcess = require('child_process');
 const { getRandomArbitrary } = require('./util');
 
 class SensorService {
   constructor () {
   }
 
-  getTemperature () {
+  getTemperature (cb) {
     // TODO: Replace with real sensor call
-    return getRandomArbitrary(15, 35);
+    return childProcess.
+		execSync("vcgencmd measure_temp")
+		.toString()
+		.replace(/.*?([0-9]+[.]?[0-9]+).*/, "$1")
+		.replace(/\r?\n$/, "");
   }
 }
 
