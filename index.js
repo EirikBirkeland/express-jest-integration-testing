@@ -8,9 +8,15 @@ app.use(morgan('tiny'));
 
 app.get('/temperature', (req, res) => {
 	const { room, unit } = config;
-	const { temperature } = SensorService.getTemperature();
+	const temperature  = SensorService.getTemperature();
 
-	res.status(200).send(`${room} room temperature is ${temperature}'${unit}`);
+	res.status(200).json({
+		room: room,
+		unit: unit,
+		temperature: temperature,
+		string: `${room} room temperature is ${temperature}'${unit}`,
+	})
+	//res.status(200).send();
 });
 
 const PORT = 3333;
