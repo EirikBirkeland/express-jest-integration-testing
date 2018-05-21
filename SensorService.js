@@ -6,8 +6,17 @@ class SensorService {
   constructor () {
   }
 
-  getTemperature (cb) {
-    // TODO: Replace with real sensor call
+  getAmbientTemperature (cb) {
+    const temperatureMs = childProcess.execSync("cat /sys/bus/w1/devices/28-0118308718ff/w1_slave")
+                       .toString()
+                       .replace(/\n/g, " ")
+                       .replace(/.*t=([0-9]+).*/, "$1")
+
+    return temperatureMs / 1000;
+  }
+
+	
+  getCpuTemperature (cb) {
     return childProcess.
 		execSync("vcgencmd measure_temp")
 		.toString()
